@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+    function getcookie() {
+        document.getElementById('tt').innerText = document.cookie;
+    }
+    function resetcookie() {
+        document.cookie = "testing=";
+        window.localStorage.clear();
+    }
+    function setcookie() {
+        document.cookie = "testing=testing; max-age=86400";
+    }
+
+    function setstorage() {
+        window.localStorage.setItem("testing", "this is a test");
+    }
+
+    function getstorage() {
+        document.getElementById('tt').innerText = window.localStorage.getItem("testing");
+    }
+</script>
+<body>
+Test
+<button onclick="getcookie()">Get Cookie</button>
+<button onclick="setcookie()">Set Cookie</button>
+<button onclick="getstorage()">Get Storage</button>
+<button onclick="setstorage()">Set Storage</button>
+<button onclick="resetcookie()">Reset</button><br>
+<textarea id='tt' rows='10' cols='80'></textarea>
+</body>
+</html>
